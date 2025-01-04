@@ -1,0 +1,29 @@
+.alert-box {
+    background-color: skyblue;
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+    display: none;
+    position: relative;
+}
+
+.btn {
+    border: none;
+    margin-top: 10px;
+}
+
+.open {
+    width: 80px;
+    height: 30px;
+    background-color: tomato;
+    color: white;
+}
+
+.close {
+    background-color: rgba(0,0,0,0);
+    color: gray;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 18px;
+}
