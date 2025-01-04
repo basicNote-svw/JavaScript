@@ -8,20 +8,47 @@
 </head>
 <body>
     
-    <div id='alert' class="alert-box">
-        알림창
-        <button class="btn close" onClick="close()">X</button>
+    <!-- <div id='alert' class="alert-box">
+        <p>알림창</p>
+        <button class="btn close" onClick="alertBox('none')">X</button>
     </div>
-    <button class="btn open" onClick="fOpen()">띄우기</button>
+    <button class="btn open" onClick="alertBox('block')">띄우기</button>
+    <button class="btn open" onClick="plus(3)">plus</button> -->
+
+    <div id='alert' class="alert-box">
+        <p>
+            <span id="alert-name"></span><span>를 입력하세요</span>
+        </p>
+        <button class="btn close" onClick="btnClick('none', null)">X</button>
+    </div>
+    <button class="btn open" onClick="btnClick('block', '아이디');">버튼1</button>
+    <button class="btn open" onClick="btnClick('block', '비밀번호');">버튼2</button>
 
     <script>
-
+/*
         function fOpen() {
             document.getElementById('alert').style.display = 'block';
         }
 
-        function close() {
+        function fClose() {
             document.getElementById('alert').style.display = 'none';
+        }
+*/
+        function alertBox(blank) {
+            document.getElementById('alert').style.display = blank;
+        }
+
+        function plus(a) {
+            console.log(2 + a);
+        }
+
+        function btnClick(blank, content) {
+            if (content === null) {
+                document.getElementById('alert').style.display = blank;
+            } else {
+                document.getElementById('alert').style.display = blank;
+                document.getElementById('alert-name').innerHTML = content;
+            }
         }
 
     </script>

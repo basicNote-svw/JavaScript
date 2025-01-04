@@ -10,6 +10,7 @@
 .btn {
     border: none;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 .open {
@@ -24,6 +25,6 @@
     color: gray;
     position: absolute;
     right: 20px;
-    top: 10px;
+    top: 25px;
     font-size: 18px;
 }
