@@ -26,6 +26,9 @@
     <button class="btn open" onClick="btnClick('block', '아이디');">버튼1</button>
     <button class="btn open" onClick="btnClick('block', '비밀번호');">버튼2</button>
 
+    <div class="test1">안녕하세요</div>
+    <div class="test1">안녕하세요</div>
+
     <script>
 /*
         function fOpen() {
@@ -53,10 +56,16 @@
                 document.getElementsByClassName('title1')[1].innerHTML = content;
             }
         }
-
+/*
         document.getElementById('close').addEventListener('click', function(){
             document.getElementById('alert').style.display = 'none';
         });
+*/
+        document.querySelectorAll('#close')[0].addEventListener('click', function(){
+            document.querySelector('#alert').style.display = 'none';
+        });
+
+        document.querySelectorAll('.test1')[1].innerHTML = '안녕';
 
     </script>
 
