@@ -10,9 +10,21 @@
     
     <div id='alert' class="alert-box">
         알림창
-        <button class="btn close" onClick="document.getElementById('alert').style.display = 'none';">X</button>
+        <button class="btn close" onClick="close()">X</button>
     </div>
-    <button class="btn open" onClick="document.getElementById('alert').style.display = 'block';">띄우기</button>
+    <button class="btn open" onClick="fOpen()">띄우기</button>
+
+    <script>
+
+        function fOpen() {
+            document.getElementById('alert').style.display = 'block';
+        }
+
+        function close() {
+            document.getElementById('alert').style.display = 'none';
+        }
+
+    </script>
 
 </body>
 </html>
