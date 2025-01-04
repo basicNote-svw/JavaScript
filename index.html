@@ -16,10 +16,12 @@
     <button class="btn open" onClick="plus(3)">plus</button> -->
 
     <div id='alert' class="alert-box">
+        <p class="title1">알림창</p>
         <p>
-            <span id="alert-name"></span><span>를 입력하세요</span>
+            <span id="alert-name" class="title1"></span><span>를 입력하세요</span>
         </p>
-        <button class="btn close" onClick="btnClick('none', null)">X</button>
+        <!-- <button class="btn close" onClick="btnClick('none', null)">X</button> -->
+        <button class="btn close" id="close">X</button>
     </div>
     <button class="btn open" onClick="btnClick('block', '아이디');">버튼1</button>
     <button class="btn open" onClick="btnClick('block', '비밀번호');">버튼2</button>
@@ -33,7 +35,7 @@
         function fClose() {
             document.getElementById('alert').style.display = 'none';
         }
-*/
+
         function alertBox(blank) {
             document.getElementById('alert').style.display = blank;
         }
@@ -41,15 +43,20 @@
         function plus(a) {
             console.log(2 + a);
         }
-
+*/
         function btnClick(blank, content) {
             if (content === null) {
                 document.getElementById('alert').style.display = blank;
             } else {
                 document.getElementById('alert').style.display = blank;
-                document.getElementById('alert-name').innerHTML = content;
+/*                document.getElementById('alert-name').innerHTML = content;    */
+                document.getElementsByClassName('title1')[1].innerHTML = content;
             }
         }
+
+        document.getElementById('close').addEventListener('click', function(){
+            document.getElementById('alert').style.display = 'none';
+        });
 
     </script>
 
