@@ -26,7 +26,7 @@
     <button class="btn open" onClick="btnClick('block', '아이디');">버튼1</button>
     <button class="btn open" onClick="btnClick('block', '비밀번호');">버튼2</button>
 
-    <div class="test1">안녕하세요</div>
+    <div class="test1 hello">안녕하세요</div>
     <div class="test1">안녕하세요</div>
 
     <script>
@@ -67,6 +67,15 @@
 
         document.querySelectorAll('.test1')[1].innerHTML = '안녕';
 
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+
+    <script>
+        $('.hello').html('Hello World');
+        $('.hello').css('color', 'yellowgreen');
+
+        $('.test1').html('변경연습');
     </script>
 
 </body>
