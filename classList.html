@@ -8,6 +8,14 @@
     <link href="./css/classList.css" rel="stylesheet">
 </head>
 <body>
+    <!-- 모달창은 제일 위에 -->
+    <div class="black-bg">
+        <div class="white-bg">
+            <h4>로그인하세요</h4>
+            <button class="btn btn-danger" id="close">닫기</button>
+        </div>
+    </div> 
+
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <span class="navbar-brand">Navbar</span>
@@ -25,13 +33,8 @@
         <li class="list-group-item">And a fifth one</li>
     </ul> 
 
-    <button class="btn btn-primary m-3">버튼</button>
-    <div class="black-bg">
-        <div class="white-bg">
-            <h4>로그인하세요</h4>
-            <button class="btn btn-danger" id="close">닫기</button>
-        </div>
-    </div> 
+    <button class="btn btn-primary m-3">로그인</button>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -45,17 +48,17 @@
 
     <script>
         $('.btn-primary').on('click', function(){
-/*            $('.black-bg').addClass('show');
-            $('.black-bg').show();
-            $('.black-bg').fadeIn();    */
-            $('.black-bg').slideDown();
+            $('.black-bg').addClass('show-modal');
+/*            $('.black-bg').show();
+            $('.black-bg').fadeIn();
+            $('.black-bg').slideDown();    */
         });
 
         $('.btn-danger').on('click', function(){
-/*            $('.black-bg').removeClass('show');
-            $('.black-bg').hide();
-            $('.black-bg').fadeOut();   */
-            $('.black-bg').slideUp();
+            $('.black-bg').removeClass('show-modal');
+/*            $('.black-bg').hide();
+            $('.black-bg').fadeOut();
+            $('.black-bg').slideUp();   */
         });
     </script>
     
