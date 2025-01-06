@@ -11,8 +11,17 @@
     <!-- 모달창은 제일 위에 -->
     <div class="black-bg">
         <div class="white-bg">
-            <h4>로그인하세요</h4>
-            <button class="btn btn-danger" id="close">닫기</button>
+            <h4>로그인</h4>
+            <form action="success.html">
+                <div class="my-3">
+                    <input type="text" class="form-control id"> 
+                </div>
+                <div class="my-3">
+                    <input type="password" class="form-control password">
+                </div>
+                <button type="submit" class="btn btn-primary">전송</button>
+                <button type="button" class="btn btn-danger" id="close">닫기</button>
+            </form>
         </div>
     </div> 
 
@@ -42,6 +51,18 @@
         document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', function(){
             document.getElementsByClassName('list-group')[0].classList.toggle('show');
         });
+
+/*        document.getElementsByTagName('form')[0].addEventListener('submit', function(e){
+            if(document.getElementsByClassName('id')[0].value == '') {
+                e.preventDefault();
+                alert('아이디를 입력하세요');
+            }
+            else if(document.getElementsByClassName('password')[0].value == '') {
+                e.preventDefault();
+                alert('비밀번호를 입력하세요');
+            }
+        });
+*/
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
@@ -59,6 +80,19 @@
 /*            $('.black-bg').hide();
             $('.black-bg').fadeOut();
             $('.black-bg').slideUp();   */
+        });
+
+        $('form').on('submit', function(e){
+            if($('.id').val() == '') {
+                e.preventDefault();
+                alert('아이디를 입력하세요');
+            } else if($('.password').val() == '') {
+                e.preventDefault();
+                alert('비밀번호를 입력하세요');
+            } else if($('.password').val().length < 6 ) {
+                e.preventDefault();
+                alert('비밀번호 길이가 모자랍니다')
+            }
         });
     </script>
     
