@@ -16,6 +16,44 @@
         document.getElementById('hi').innerHTML = 'JS 고수';
         document.getElementById('hi').style.color = 'green';
         document.getElementById('hello').style.fontSize = '16px';
+
+        function 삼의배수게임(n) {
+            if(n % 9 == 0) {
+                console.log('박수박수');
+            }
+            else if(n % 3 == 0) {
+                console.log('박수');
+            } 
+            else {
+                console.log('통과');
+            }
+        }
+
+        삼의배수게임(18);
+
+        function 합격여부(개론, 민법) {
+            if(개론 > 100 || 민법 > 100) {
+                alert('과목별 점수가 100점이 넘습니다. 다시 확인하세요.');
+            }
+            else if(개론 < 40 || 민법 < 40) {
+                console.log('불합격')
+            } else if(개론 + 민법 < 120) {
+                console.log('불합격')
+            } else {
+                console.log('합격')
+            }
+        }
+
+        합격여부(150, 50);
+
+        function 삼육구게임(n){
+            if(n % 10 == 3 || n % 10 == 6 || n % 10 == 9)
+                console.log('박수');
+            else
+                console.log('통과');
+        }
+
+        삼육구게임(26);
     </script>
 
 </body>
