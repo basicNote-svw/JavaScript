@@ -25,6 +25,8 @@
         </div>
     </div> 
 
+    <span class="badge bg-dark m-2" style="cursor: pointer;"><span class="mode">Dark</span> 🔄️</span>
+
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <span class="navbar-brand">Navbar</span>
@@ -98,6 +100,19 @@
             } else if($('.password').val().length < 6 ) {
                 e.preventDefault();
                 alert('비밀번호 길이가 모자랍니다')
+            }
+        });
+
+        var count = 0;
+
+        $('.badge').on('click', function(){
+            count++;
+            if(count % 2 == 0) {
+                $('.mode').html('Dark');
+                $('body').removeClass('bg-dark');
+            } else {
+                $('.mode').html('Light');
+                $('body').addClass('bg-dark');
             }
         });
     </script>
