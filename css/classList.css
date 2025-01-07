@@ -28,3 +28,63 @@
     visibility: visible;
     opacity: 1;
 }
+
+.carousel {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.slide-container {
+    width: 300vw;
+    transition: all 1s;
+}
+
+.slide-box {
+    width: 100vw;
+    float: left;
+}
+
+.slide-box img {
+    width: 100%;
+}
+
+.sbtn-box {
+    position: absolute;
+    padding: 0 20px;
+    top: 45%;
+    width: 100%;
+}
+
+.sbtn {
+    position: absolute;
+    border: none;
+    background-color: black;
+    font-size: 30px;
+    color: white;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    opacity: 0.5;
+}
+
+.sbtn:nth-child(2) {
+    right: 20px;
+}
+
+.sbtn:hover {
+    opacity: 1;
+}
+
+.cbtn-box {
+    margin: 0 auto;
+}
+
+.cbtn {
+    border: none;
+    background-color: black;
+    width: 5px;
+    height: 10px;
+    border-radius: 50%;
+}
