@@ -262,7 +262,37 @@
 
             $('.preg').css('width', `${scrollPercentage}%`);
         });
+/*
+        // 모달창의 검은 배경 클릭시 모달창 닫기
+        document.querySelector('.black-bg').addEventListener('click', function(e){
 
+//            e.target;           // 이벤트 발생한 곳
+//            e.currentTarget;    // 이벤트리스터 달린 곳)(= this)
+//            console.log(e.currentTarget);
+//            console.log(this);
+//            e.preventDefault;   // 이벤트 기본동작 막아줌
+//            e.stopPropagation();    // 내 상위요소로 이벤트 버블링 막아줌
+
+
+            console.log(e.target);
+            console.log(e.currentTarget);
+            console.log(document.querySelector('.black-bg'));
+
+            if(e.target == e.currentTarget) {
+                document.querySelector('.black-bg').classList.remove('show-modal');
+            }
+        });
+*/
+
+        $('.black-bg').on('click', function(e){
+            console.log($(e.target));
+            console.log($(e.currentTarget));
+            console.log($('.black-bg'));
+
+//            if($(e.target).is($(e.currentTarget)))
+            if($(e.target).is($('.black-bg')))
+                $('.black-bg').removeClass('show-modal')
+        });
 
     </script>
     

@@ -29,7 +29,7 @@
     height : 100%;
     position : fixed;   /* 위치고정 */
     background : rgba(0,0,0,0.5);
-    z-index : 5;    /* 맨 앞에 위치시킴 */
+    z-index : 6;    /* 맨 앞에 위치시킴 */
     padding: 30px;  
     /* display: none; */
     visibility: hidden;
