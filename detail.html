@@ -10,6 +10,32 @@
 </head>
 <body>
 
+    <div class="container mt-3">
+        <div class="card p-3">
+            <span class="name">상품명</span>
+            <span class="price">가격</span>
+        </div>
+    </div>
+
+    <script>
+        var car = ['소나타', 50000, 'white'];     // array
+        console.log(car);
+        car[1] = 60000;
+        console.log(car[1]);
+
+        car.sort();
+        console.log(car);
+        console.log(car.slice(1,3));
+
+        var car2 = {name : '소나타', price : 50000, color : 'white'};   // object
+        console.log(car2)
+        console.log(car2['name'])
+        console.log(car2.price)
+
+        document.querySelector('.name').innerHTML = car2.name;
+        $('.price').html(car2.price);
+    </script>
+
 
     <div class="container mt-5">
         <ul class="list">
