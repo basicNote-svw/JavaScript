@@ -40,6 +40,84 @@
         $('.price').html(car2.price);
     </script>
 
+    <form class="container my-5 form-group">
+        <p>상품선택</p>
+        <select class="form-select mt-2">
+            <option>모자</option>
+            <option>셔츠</option>
+            <option>바지</option>
+        </select>
+        <select class="form-select mt-2 form-hide">
+            <option>95</option>
+            <option>100</option>
+        </select>
+    </form>
+
+    <!-- <div id="test">
+        <h4>반가워</h4>
+    </div> -->
+
+    <script>
+/*
+        var a = document.createElement('p');
+        a.innerHTML = '안녕';
+        document.querySelector('#test').appendChild(a);
+
+        var 템플릿 = '<p>안녕</p>';
+//        document.querySelector('#test').insertAdjacentHTML('beforeend', 템플릿);
+//        document.querySelector('#test').innerHTML = 템플릿;
+//        $('#test').append(템플릿);
+        $('#test').html(템플릿);
+*/
+        var shirts = [95, 100, 105];
+        var pants = [28, 30, 32, 34];
+
+        $('.form-select').eq(0).on('input', function(e){
+            console.log($('.form-select').eq(0).val());
+            console.log(e.currentTarget.value);
+            console.log(this.value);
+
+            var firstSelectVal = $('.form-select').eq(0).val();
+            var secondSelect = $('.form-select').eq(1);
+
+            if(e.currentTarget.value == '셔츠') {
+                secondSelect.removeClass('form-hide');
+                secondSelect.html('')
+//                var shirtsSize = `<option>95</option>
+//                    <option>100</option>`;
+//                secondSelect.html(shirtsSize);
+                shirts.forEach(function(data){
+                    secondSelect.append(`<option>${data}</option>`);
+                });
+            }
+            else if(this.value =='바지') {
+                secondSelect.removeClass('form-hide');
+                secondSelect.html('')
+//                var pantsSize = `<option>28</option>
+//                    <option>30</option>`;
+//                secondSelect.html(pantsSize);
+                pants.forEach((data) => {
+                    secondSelect.append(`<option>${data}</option>`);
+                });
+            }
+            else if (this.value == '모자') {
+                $('.size').eq(0).addClass('form-hide');
+            }
+        });
+
+        var obj = {name : 'kim', age : 20};
+
+        for (var key in obj) {
+            console.log(key);
+            console.log(obj[key]);
+//            console.log(obj['name']); // 'kim'
+//            console.log(obj['age']);  // 20
+//            console.log(obj.name);
+//            console.log(obj.age);
+        }
+
+    </script>
+
 
     <div class="container mt-5">
         <ul class="list">
