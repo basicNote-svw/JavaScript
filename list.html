@@ -62,5 +62,36 @@
             id.find('p').html(`가격 : ${products[num].price}`);
         }
     </script> 
+
+    <script>
+        $.get('https://basicnote-svw.github.io/file/hello.txt')
+        .done(function(data){
+            console.log(data);
+        })
+        .fail(function(){       // ajax 실패시 특정 코드 실행
+            console.log('실패');
+        })
+/*
+        $.post('https://basicnote-svw.github.io/file/hello.txt', {name: 'kim'}).done(function(data){
+            console.log(data);
+        })
+*/
+        $.get('https://basicnote-svw.github.io/file/price.json')
+        .done(function(data){
+            console.log(data.price);
+        })
+        .fail(function(){
+            console.log('실패');
+        })
+
+        fetch('https://basicnote-svw.github.io/file/price.json')
+        .then(res => res.json())    // 받아온 JSON을 object로 바꿔주는 기능
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    </script>
 </body>
 </html>
