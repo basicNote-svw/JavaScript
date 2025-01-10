@@ -392,7 +392,7 @@ var newProduct = products.filter(a => a.price <= 60000);
 
 <br>
 
-### 3. <input>을 이용해 유저가 직접 가격을 입력해서 필터하는 기능
+### 3. \<input>을 이용해 유저가 직접 가격을 입력해서 필터하는 기능
 > html
 ```html
 <div class="d-flex justify-center mt-3">

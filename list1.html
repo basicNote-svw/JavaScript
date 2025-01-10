@@ -23,7 +23,7 @@
             </div> -->
     
         </div>
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center mt-3">
             <button class="btn btn-secondary more">더보기</button>
         </div>
         <div class="d-flex justify-left mt-3">
@@ -32,7 +32,7 @@
             <button class="btn btn-secondary m-1 filters">6만원↓</button>
             <button class="btn btn-secondary m-1 reset">되돌리기</button>
         </div>
-        <div class="d-flex justify-center mt-3">
+        <div class="d-flex mt-3">
             <input type="search" class="search-price">
             <button type="submit" class="btn btn-secondary search-price-btn">가격검색</button>
         </div>
@@ -49,10 +49,11 @@
 
         products.forEach((a, i)=>{
             var card = 
-            `<div class="col-sm-4">
+            `<div class="col-sm-4 mt-2">
                 <img src="https://via.placeholder.com/600" class="w-100">
                 <h5>${products[i].title}</h5>
                 <p>가격 : ${products[i].price}</p>
+                <button class='btn btn-danger cart-btn'>장바구니 담기</button>
             </div>`;
             $('.row').append(card);
         })
@@ -76,10 +77,10 @@
                 console.log(data);
                 data.forEach((a, i)=>{
                     var card = 
-                    `<div class="col-sm-4">
+                    `<div class="col-sm-4 mt-2">
                         <img src="https://via.placeholder.com/600" class="w-100">
                         <h5>${data[i].title}</h5>
-                        <p>가격 : ${data[i].price}</p>
+                        <button class='btn btn-danger cart-btn'>장바구니 담기</button>
                     </div>`;
                     $('.row').append(card);
                 })
@@ -131,18 +132,18 @@
             $('.row').html('');
 
             products.forEach((a, i)=>{
-                var card = 
-                `<div class="col-sm-4">
+                `<div class="col-sm-4 mt-2">
                     <img src="https://via.placeholder.com/600" class="w-100">
                     <h5>${products[i].title}</h5>
                     <p>가격 : ${products[i].price}</p>
+                    <button class='btn btn-danger cart-btn'>장바구니 담기</button>
                 </div>`;
                 $('.row').append(card);
             })    
         });
 
         // 상품 정렬
-        $('.product').click(function(a, b){
+        $('.product').click(function(){
             ++count;
             console.log(count);
             if(count % 2 == 1) {
@@ -159,10 +160,11 @@
 
             products.forEach((a, i)=>{
                 var card = 
-                `<div class="col-sm-4">
+                `<div class="col-sm-4 mt-2">
                     <img src="https://via.placeholder.com/600" class="w-100">
                     <h5>${products[i].title}</h5>
                     <p>가격 : ${products[i].price}</p>
+                    <button class='btn btn-danger cart-btn'>장바구니 담기</button>
                 </div>`;
                 $('.row').append(card);
             })  
@@ -180,10 +182,11 @@
 
             newProducts.forEach((a, i)=>{
                 var card = 
-                `<div class="col-sm-4">
+                `<div class="col-sm-4 mt-2">
                     <img src="https://via.placeholder.com/600" class="w-100">
                     <h5>${newProducts[i].title}</h5>
                     <p>가격 : ${newProducts[i].price}</p>
+                    <button class='btn btn-danger cart-btn'>장바구니 담기</button>
                 </div>`;
                 $('.row').append(card);
             })  
@@ -200,10 +203,11 @@
 
             productsCopy.forEach((a, i)=>{
                 var card = 
-                `<div class="col-sm-4">
+                `<div class="col-sm-4 mt-2">
                     <img src="https://via.placeholder.com/600" class="w-100">
                     <h5>${productsCopy[i].title}</h5>
                     <p>가격 : ${productsCopy[i].price}</p>
+                    <button class='btn btn-danger cart-btn'>장바구니 담기</button>
                 </div>`;
                 $('.row').append(card);
             })  
@@ -221,13 +225,48 @@
 
             newProducts.forEach((a, i)=>{
                 var card = 
-                `<div class="col-sm-4">
+                `<div class="col-sm-4 mt-2">
                     <img src="https://via.placeholder.com/600" class="w-100">
                     <h5>${newProducts[i].title}</h5>
                     <p>가격 : ${newProducts[i].price}</p>
+                    <button class='btn btn-danger cart-btn'>장바구니 담기</button>
                 </div>`;
                 $('.row').append(card);
             }) 
+        });
+
+        localStorage.setItem('이름', 'kim');
+        localStorage.getItem('이름');
+        localStorage.removeItem('이름');
+
+        var newArr = JSON.stringify(arr);
+        localStorage.setItem('num', newArr);
+
+        var outNum = localStorage.getItem('num');
+        outNum = JSON.parse(outNum);
+        console.log(outNum);
+
+        $('.cart-btn').click(function(e){
+            ++count;
+            var title = $(e.target).siblings('h5').text();
+            var price = $(e.target).siblings('p').text();
+            var priceValue = price.split(' : ')[1];
+            console.log(title, priceValue);
+            if(localStorage.getItem('cart') != null) {
+                var outItem = localStorage.getItem('cart');
+                outItem = JSON.parse(outItem);
+                
+                var existItem = outItem.find(item => item.title == title);
+                if(existItem) {
+                    existItem.num += 1;
+                } else {
+                    outItem.push({title: title, num: 1, price: priceValue});
+                }
+                // console.log(outItem);
+                localStorage.setItem('cart', JSON.stringify(outItem));
+            } else {
+                localStorage.setItem('cart', JSON.stringify([{title: title, num: 1, price: priceValue}]));
+            }
         });
     </script> 
 
