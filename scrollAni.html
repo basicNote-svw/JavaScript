@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./css/scrollAni.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+</head>
+<body>
+    
+    <div class="card-background">
+        <div class="card-box">
+            <img src="./img/card1.png">
+        </div>
+        <div class="card-box">
+            <img src="./img/card2.png">
+        </div>
+        <div class="card-box">
+            <img src="./img/card3.png">
+        </div>
+    </div>
+
+    <script>
+
+        $(window).scroll(function(){
+            var h = $(window).scrollTop();
+            console.log(h);
+            // 650-1150 첫째 카드 opacity 1-0 변경
+
+            // y = a * 높이 + b;
+            var y = (-1/500) * h + (115/50);
+            var z = (-1/5000) * h + 565/500;
+            $('.card-box').eq(0).css('opacity', y);
+            $('.card-box').eq(0).css({'opacity': y, 'transform': `scale(${z})`});
+
+            // 1150-1450 둘째 카드 opacity 1-0 변경
+            y = (-1/300) * h + (145/30);
+            z = (-1/3000) * h + (4150/3000);
+            $('.card-box').eq(1).css('opacity', y);
+            $('.card-box').eq(1).css({'opacity': y, 'transform': `scale(${z})`});
+        });
+
+    </script>
+
+</body>
+</html>
